@@ -26,3 +26,17 @@ function filter(arr) {
 
 //console.log(filter([1, 6, 2, 8, 9]));
 
+function maxSum(arr) {
+  let sum = 0;
+  let currentSum = 0;
+  for (let i=0; i<arr.length; i++) {
+    currentSum += arr[i];
+    if (sum < currentSum) {
+      sum = currentSum;
+    }
+
+  }
+  return sum;
+}
+
+console.log(maxSum([-4, 6, 3, 5, -2, -1, -10, 14, 12]));
