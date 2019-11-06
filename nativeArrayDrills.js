@@ -24,7 +24,7 @@ function filter(arr) {
 
 //console.log(filter([1, 6, 2, 8, 9]));
 
-function maxSum(arr) {
+function maxSum(arr) { // O(n^2)
   let sum = 0;
 
   for (let i = 0; i < arr.length; i++) {
@@ -68,3 +68,12 @@ function removeCharacters(str) {
   return str.replace(/[aeiou]/ig, ''); //O(n)
 }
 //console.log(removeCharacters('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
+
+function products(arr) {
+  let total = arr.reduce((a, b) => a * b);
+  let products = [];
+  arr.forEach(val => products.push(total/val))
+  return products;
+}
+
+console.log(products([1, 3, 9, 4, 10]))
