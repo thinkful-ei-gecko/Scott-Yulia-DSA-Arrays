@@ -26,15 +26,30 @@ function filter(arr) {
 
 function maxSum(arr) {
   let sum = 0;
-  let currentSum = 0;
-  for (let i=0; i<arr.length; i++) {
-    currentSum += arr[i];
-    if (sum < currentSum) {
-      sum = currentSum;
-    }
 
+  for (let i = 0; i < arr.length; i++) {
+    let total = arr[i];
+    for(let j = i + 1; j < arr.length; j++) {
+      total += arr[j];
+
+      if (total > sum) {
+        sum = total
+      }
+    }
   }
   return sum;
-}
 
+
+  // let sum = 0;
+  // let currentSum = 0;
+  // for (let i=0; i<arr.length; i++) {
+  //   currentSum += arr[i];
+  //   if (sum < currentSum) {
+  //     sum = currentSum;
+  //   }
+
+  // }
+  // return sum;
+}
+console.log(maxSum([4, 6, -3, 5, -2, 1]));
 console.log(maxSum([-4, 6, 3, 5, -2, -1, -10, 14, 12]));
