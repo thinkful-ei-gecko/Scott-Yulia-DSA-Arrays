@@ -61,4 +61,10 @@ function mergeArrays(arr1, arr2) {
   return merged;
 }
 
-console.log(mergeArrays([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10]));
+//console.log(mergeArrays([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10]));
+
+function removeCharacters(str) {
+  let initStr = '';
+  return str.replace(/[aeiou]/ig, ''); //O(n)
+}
+//console.log(removeCharacters('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
