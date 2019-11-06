@@ -91,19 +91,19 @@ function main() {
   arr.push(19);
   arr.push(45);
   arr.push(10);
-  arr.pop();
-  arr.pop();
-  arr.pop();
+//   arr.pop();
+//   arr.pop();
+//   arr.pop();
 
-  console.log(arr.get(0));
+//   console.log(arr.get(0));
 
-  arr.remove(2);
-  arr.remove(1);
-  arr.remove(0);
+//   arr.remove(2);
+//   arr.remove(1);
+//   arr.remove(0);
 
-  arr.push('tauhida');
+//   arr.push('tauhida');
 
-  console.log(arr.get(0));
+//   console.log(arr.get(0));
 
   console.log(arr);
 
