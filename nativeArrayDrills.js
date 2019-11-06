@@ -51,5 +51,14 @@ function maxSum(arr) {
   // }
   // return sum;
 }
-console.log(maxSum([4, 6, -3, 5, -2, 1]));
-console.log(maxSum([-4, 6, 3, 5, -2, -1, -10, 14, 12]));
+// console.log(maxSum([4, 6, -3, 5, -2, 1]));
+// console.log(maxSum([-4, 6, 3, 5, -2, -1, -10, 14, 12]));
+
+function mergeArrays(arr1, arr2) {
+  let merged = [...arr1, ...arr2]; //O(n)
+  merged.sort((a, b) => a - b); //O(n^2) || best case O(log(n))
+  
+  return merged;
+}
+
+console.log(mergeArrays([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10]));
