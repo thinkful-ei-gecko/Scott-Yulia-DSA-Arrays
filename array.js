@@ -65,12 +65,49 @@ class Array {
     this.length--;
   }
 }
-Array.SIZE_RATIO = 3;
-let testArr = new Array();
-testArr.push(1);
-testArr.push(2);
-testArr.insert(1, 0);
-testArr.remove(0);
-console.log(testArr);
-console.log(testArr.get(0));
+
+/*
+  2. length is 6 because we have 6 values in the array.
+     capacity is 12 because once we surpass the original capacity of 3, we multiply the new length of 4 times the SIZE_RATIO, giving us 12
+     memory address is 3 because once we surpass the original capacity when length becomes 4, we run memory.allocate to find an appropriate memory block for new capacity. Since nothing else is in mem, it goes to index 3 (4th position in mem)
+     results of the new lines is an array containing [3, 5, 15, 19, 45, 10]
+
+  3. length is 3 - pop reduces length by 1 each time
+     capacity is 12 - pop has no affect on capacity
+     ptr is 3 - pop doesn't move the array, so everything is in the same position
+     results of the program after the new lines of code is an array containing [3, 5, 15]
+
+  4. first item before empty is 3
+     adding 'tauhida' results in NaN - the memory allocation is for float64 numbers, does not accept strings
+     resize only grows the array when length surpasses capacity - it does not resize when items are removed
+*/
+
+function main() {
+  Array.SIZE_RATIO = 3;
+  let arr = new Array();
+  arr.push(3);
+  arr.push(5);
+  arr.push(15);
+  arr.push(19);
+  arr.push(45);
+  arr.push(10);
+  arr.pop();
+  arr.pop();
+  arr.pop();
+
+  console.log(arr.get(0));
+
+  arr.remove(2);
+  arr.remove(1);
+  arr.remove(0);
+
+  arr.push('tauhida');
+
+  console.log(arr.get(0));
+
+  console.log(arr);
+
+}
+
+main();
 
