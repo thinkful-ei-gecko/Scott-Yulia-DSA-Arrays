@@ -1,6 +1,6 @@
 function urlifyString(str) {
-  return str.split(" ").join('%20'); // O(n)
-};
+  return str.split(' ').join('%20'); // O(n)
+}
 
 // console.log(urlifyString('www.thinkful.com /tauh ida parv een'));
 
@@ -33,7 +33,7 @@ function maxSum(arr) { // O(n^2)
       total += arr[j];
 
       if (total > sum) {
-        sum = total
+        sum = total;
       }
     }
   }
@@ -72,8 +72,38 @@ function removeCharacters(str) {
 function products(arr) {
   let total = arr.reduce((a, b) => a * b);
   let products = [];
-  arr.forEach(val => products.push(total/val))
+  arr.forEach(val => products.push(total/val));
   return products;
 }
 
-console.log(products([1, 3, 9, 4, 10]))
+// console.log(products([1, 3, 9, 4, 10]))
+
+function twoD(arr) {
+  const zeroArr = [...arr];
+  const col = [];
+  const row = [];
+  for (let i=0; i<arr.length; i++) {
+    if (arr[i].includes(0)) {
+      for (let j=0; j<arr[i].length; j++) {
+        if (zeroArr[i][j] === 0 && arr[i].includes(0)) {
+          col[j] = true;
+          row[i] = true;
+        }  
+      }
+    }  
+  }
+  for (let i=0; i< zeroArr.length; i++) {
+    for (let j=0; j<zeroArr.length; j++) {
+      if (row[i] || col[j]) {
+        zeroArr[i][j] = 0;
+      }
+    }
+
+  }
+  console.log(zeroArr);
+}
+twoD([[1,0,1,1,0],
+  [0,1,1,1,0],
+  [1,1,1,1,1],
+  [1,0,1,1,1],
+  [1,1,1,1,1]]);
